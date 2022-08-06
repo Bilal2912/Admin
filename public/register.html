@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.5rem',
+                        30:'7.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Register</title>
+</head>
+<body class="bg-blue-100 m-0 p-0">
+    <a href="https://www.spit.ac.in/"><img src="College Logo.jpg" alt="" class="src absolute top-2 left-2"></a>
+    <div class="con flex justify-center items-center flex-col mt-60 mr-0 text-5xl">
+        <h1 class="text-6xl absolute top-32 font-bold">Welcome to S.P.I.T. Inventory</h1>
+        <form action="/register" method="POST">
+            <div class="forms flex">
+                <div class="firstcol my-2 mr-4">
+                    <div class="reg">
+                        <div class="form_elem">
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="text" placeholder="First Name" name="firstname" required>
+                        </div>
+                        <div class="form_elem">
+                            <input class="hidearrow rounded-md mb-4 p-2 text-4xl" type="number" placeholder="Contact Number" name="phone" required>
+                        </div>
+                        <div class="form_elem">
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="password" placeholder="Password" name="pass" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondcol my-2 ml-4">
+                    <div class="reg">
+                        <div class="form_elem">
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="text" placeholder="Last Name" name="lastname" required>
+                        </div>
+                        <div class="form_elem">
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="email" placeholder="S.P.I.T. Email ID" name="emailid" required>
+                        </div>
+                        
+                        <div class="form_elem">
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="password" placeholder="Confirm Password" name="confirmpass" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" name="" id="" class="bg-blue-900 text-4xl rounded-md p-3 text-white  hover:bg-white hover:text-blue-900 w-full font-bold mt-2">Register Now</button>
+        </form>
+        <a href="./login.html" class="text-blue-700 hover:underline text-xl italic mt-1">Already have an account. Sign In Here</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

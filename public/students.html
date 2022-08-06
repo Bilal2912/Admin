@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.5rem',
+                        30:'7.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Students</title>
+</head>
+<body class="bg-blue-100 m-0 p-0">
+    <div class="navbar flex justify-between items-center bg-blue-900">
+        <div class="logo p-2">
+            <a href="https://www.spit.ac.in/"><img src="College Logo.jpg" alt="" class="src w-10 xsm:w-14 md:w-16"></a>
+        </div>
+        <div class="text px-2 hover:cursor-pointer lg:hidden">
+            <h2 class="font-bold text-white text-2xl xsm:hidden xxsm:text-3xl">S.P.I.T.</h2>
+            <h2 class="font-bold text-white text-3xl hidden xsm:block sm:hidden">S.P.I.T. Andheri</h2>
+            <h2 class="font-bold text-white text-3xl hidden sm:block lg:hidden">Sardar Patel Institute of Technology</h2>
+        </div>
+        <div class="hamburger py-2 pr-4 hover:cursor-pointer lg:hidden md:pr-6">
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+        </div>
+        <ul class="font-bold text-white hidden lg:flex">
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/welcome">Home</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/inventory">Inventory</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/requests">Requests</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/problems">Problems</a></li>
+            <li class="current px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/students">Students</a></li>
+        </ul>
+        <div class="icon hidden lg:inline-block">
+            <img src="image(2).png" alt="" class="src w-6 absolute right-18 top-7 cursor-pointer">
+            <img src="image (1).png" alt="" class="src w-14 mr-4 cursor-pointer">
+        </div>
+    </div>
+    <div class="logout hidden" id="log">
+        <a href="/login"><span class="bg-white text-blue-900 px-4 py-2 font-bold rounded-md text-3xl absolute right-26 top-3 cursor-pointer hover:bg-blue-900 hover:text-white">Logout</span></a>
+    </div>
+    <ul class="bg-blue-900 absolute text-white font-bold rounded-md -right-1 md:right-0 top-12 xsm:top-16 hidden lg:hidden" id="navlist">
+        <li class="px-4 py-2 text-center border-b-2 hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Logout</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Home</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Inventory</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Requests</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Problems</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Students</a></li>
+    </ul>
+
+    <div class="contain flex justify-center my-8 flex-col items-center">
+        <h2 class="font-bold text-3xl md:text-4xl lg:text-6xl relative right-20">Student Information</h2>
+        <div class="contained my-10 text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+            <div class="cont flex items-center absolute top-28 left-2/3 ">
+                <input class="rounded-lg px-4 py-2 text-3xl w-80 mr-3" type="text" placeholder="Search UCID">
+                <button class="btn bg-blue-900 rounded-md text-white font-bold px-3 py-2 mb-3 mt-2 text-2xl hover:bg-white hover:text-blue-900 relative top-0.5">Search</button>
+            </div>
+            <table class="border-separate">
+                <th class="px-10 bg-blue-900 py-4 text-white rounded-xl">Product Name</th>
+                <!-- <th class="px-10 bg-blue-900 py-4 text-white rounded-xl sm:hidden">Item Names</th> -->
+                <th class="px-10 bg-blue-900 py-4 text-white rounded-xl">UCID</th>
+                <th class="px-10 bg-blue-900 py-4 text-white rounded-xl">Student Information</th>
+                <th class="px-10 bg-blue-900 py-4 text-white rounded-xl">Fine Imposed</th>
+                <!-- <th class="px-10 bg-blue-900 py-4 text-white rounded-xl sm:hidden">About</th> -->
+                <th class="valid px-10 bg-blue-900 py-4 text-white rounded-xl">Return</th>
+                <tr class="text-center bg-indigo-200" id="0">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="rounded-xl px-3">2019110049</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer"><button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Click Here</button> </td>
+                    <td class="rounded-xl">Lorem Ipsum</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <!-- <button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Yes</button> -->
+                        <img src="check.png" alt="" class="src btn-yes w-12 relative left-16">
+                    </td>
+                    <!-- <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <img src="close.png" alt="" class="src btn-no w-8 relative left-9">
+                    </td> -->
+                    
+                </tr>
+                <tr class="text-center bg-green-500 hidden" id="approve-0">
+                    <td class="rounded-l-md"><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Product</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">has</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">been returned</span> </td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Successfully</span></td>
+                    <td class=""></td>
+                    <td class="rounded-r-md"></td>
+                </tr>
+                <tr class="text-center bg-indigo-200" id="1">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="rounded-xl px-3">2018110030</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer"><button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Click Here</button> </td>
+                    <td class="rounded-xl">Lorem Ipsum</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <!-- <button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Yes</button> -->
+                        <img src="check.png" alt="" class="src btn-yes w-12 relative left-16">
+                    </td>
+                    <!-- <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <img src="close.png" alt="" class="src btn-no w-8 relative left-9">
+                    </td> -->
+                </tr>
+                <tr class="text-center bg-green-500 hidden" id="approve-1">
+                    <td class="rounded-l-md"><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Product</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">has</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">been returned</span> </td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Successfully</span></td>
+                    <td class=""></td>
+                    <td class="rounded-r-md"></td>
+                </tr>
+                <tr class="text-center bg-indigo-200" id="2">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="rounded-xl px-3">2019110049</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer"><button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Click Here</button> </td>
+                    <td class="rounded-xl">Lorem Ipsum</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <!-- <button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Yes</button> -->
+                        <img src="check.png" alt="" class="src btn-yes w-12 relative left-16">
+                    </td>
+                    <!-- <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <img src="close.png" alt="" class="src btn-no w-8 relative left-9">
+                    </td> -->
+                </tr>
+                <tr class="text-center bg-green-500 hidden" id="approve-2">
+                    <td class="rounded-l-md"><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Product</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">has</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">been returned</span> </td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Successfully</span></td>
+                    <td class=""></td>
+                    <td class="rounded-r-md"></td>
+                </tr>
+                <tr class="text-center bg-indigo-200" id="3">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="rounded-xl px-3">2019110049</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer"><button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Click Here</button> </td>
+                    <td class="rounded-xl">Lorem Ipsum</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <!-- <button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Yes</button> -->
+                        <img src="check.png" alt="" class="src btn-yes w-12 relative left-16">
+                    </td>
+                    <!-- <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <img src="close.png" alt="" class="src btn-no w-8 relative left-9">
+                    </td> -->
+                </tr>
+                <tr class="text-center bg-green-500 hidden" id="approve-3">
+                    <td class="rounded-l-md"><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Product</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">has</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">been returned</span> </td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Successfully</span></td>
+                    <td class=""></td>
+                    <td class="rounded-r-md"></td>
+                </tr>
+                <tr class="text-center bg-indigo-200" id="4">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="rounded-xl px-3">2019110049</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer"><button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Click Here</button> </td>
+                    <td class="rounded-xl">Lorem Ipsum</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <!-- <button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Yes</button> -->
+                        <img src="check.png" alt="" class="src btn-yes w-12 relative left-16">
+                    </td>
+                    <!-- <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <img src="close.png" alt="" class="src btn-no w-8 relative left-9">
+                    </td> -->
+                </tr>
+                <tr class="text-center bg-green-500 hidden" id="approve-4">
+                    <td class="rounded-l-md"><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Product</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">has</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">been returned</span> </td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Successfully</span></td>
+                    <td class=""></td>
+                    <td class="rounded-r-md"></td>
+                </tr>
+                <tr class="text-center bg-indigo-200" id="5">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="rounded-xl px-3">2019110068</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer"><button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Click Here</button> </td>
+                    <td class="rounded-xl">Lorem Ipsum</td>
+                    <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <!-- <button class="btn rounded-xl py-4 hover:bg-indigo-300 hidden sm:inline-block">Yes</button> -->
+                        <img src="check.png" alt="" class="src btn-yes w-12 relative left-16">
+                    </td>
+                    <!-- <td class="rounded-xl hover:bg-indigo-300 hover:cursor-pointer">
+                        <img src="close.png" alt="" class="src btn-no w-8 relative left-9">
+                    </td> -->
+                </tr>
+                <tr class="text-center bg-green-500 hidden" id="approve-5">
+                    <td class="rounded-l-md"><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Product</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">has</span></td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">been returned</span> </td>
+                    <td class=""><span class="btn text-4xl rounded-xl py-4 hidden sm:inline-block font-bold ">Successfully</span></td>
+                    <td class=""></td>
+                    <td class="rounded-r-md"></td>
+                </tr>
+                <!-- <tr class="text-center">
+                    <td class="py-4 rounded-xl" >Lorem Ipsum</td>
+                    <td class="py-4 rounded-xl" >Yes</td>
+                    <td class="py-4 rounded-xl" >Click Here</td>
+                </tr> -->
+            </table>
+        </div>
+    </div>
+    <script src="script_students.js"></script>
+</body>
+</html>

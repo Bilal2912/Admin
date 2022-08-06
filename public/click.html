@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.5rem',
+                        30:'7.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Inventory</title>
+</head>
+<body class="bg-blue-100">
+    <div class="navbar flex justify-between items-center bg-blue-900">
+        <div class="logo p-2">
+            <a href="https://www.spit.ac.in/"><img src="College Logo.jpg" alt="" class="src w-10 xsm:w-14 md:w-16"></a>
+        </div>
+        <div class="text px-2 hover:cursor-pointer lg:hidden">
+            <h2 class="font-bold text-white text-2xl xsm:hidden xxsm:text-3xl">S.P.I.T.</h2>
+            <h2 class="font-bold text-white text-3xl hidden xsm:block sm:hidden">S.P.I.T. Andheri</h2>
+            <h2 class="font-bold text-white text-3xl hidden sm:block lg:hidden">Sardar Patel Institute of Technology</h2>
+        </div>
+        <div class="hamburger py-2 pr-4 hover:cursor-pointer lg:hidden md:pr-6">
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+        </div>
+        <ul class="font-bold text-white hidden lg:flex">
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/welcome">Home</a></li>
+            <li class="current px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/inventory">Inventory</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/requests">Requests</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/problems">Problems</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/students">Students</a></li>
+        </ul>
+        <div class="icon hidden lg:inline-block">
+            <img src="image(2).png" alt="" class="src w-6 absolute right-18 top-7 cursor-pointer">
+            <img src="image (1).png" alt="" class="src w-14 mr-4 cursor-pointer">
+        </div>
+    </div>
+    <div class="logout hidden" id="log">
+        <a href="/login"><span class="bg-white text-blue-900 px-4 py-2 font-bold rounded-md text-3xl absolute right-26 top-3 cursor-pointer hover:bg-blue-900 hover:text-white">Logout</span></a>
+    </div>
+    <ul class="bg-blue-900 absolute text-white font-bold rounded-md -right-1 md:right-0 top-12 xsm:top-16 hidden lg:hidden" id="navlist">
+        <li class="px-4 py-2 text-center border-b-2 hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Logout</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Home</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Inventory</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Requests</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Problems</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Students</a></li>
+    </ul>
+    <div class="contain flex items-center flex-col xl:flex-row xl:items-start xl:justify-between mt-6">
+        <div class="contained xl:w-1/2">
+            <h2 class="font-bold text-2xl m-2 xl:text-4xl md:ml-10 lg:ml-10 xl:ml-6 xsm:text-4xl xsm:my-4 xsm:ml-4 sm:ml-8">Product Name</h2>
+            <div class="container m-auto w-11/12 bg-gray-100 rounded-lg flex flex-col items-center max-w-3xl xl:mx-6">
+                <img src="MC.jpg" alt="" class="src px-3 py-3">
+            </div>
+        </div>
+        <div class="containing mb-4 xl:w-1/2">
+            <h2 class="font-bold text-2xl m-2 xl:text-4xl md:ml-10 xl:ml-7 xsm:text-4xl xsm:my-4 xsm:ml-4 sm:ml-8">About this Item</h2>
+            <div class="cont mt-3 ml-4 w-11/12 bg-gray-100 rounded-lg flex flex-col items-center max-w-5xl">
+                <p class="px-3 py-2 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sed nesciunt, eius accusamus pariatur dolores itaque repellat libero illo cupiditate magni aspernatur earum officiis? Deserunt maiores fuga pariatur facilis obcaecati. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro recusandae, officia harum aspernatur consequatur reprehenderit itaque officiis saepe voluptatem repudiandae, impedit explicabo, quis magni nesciunt quas inventore facere. Soluta, quia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga distinctio repellendus molestias tempora maiores culpa? Nostrum, impedit, doloribus laudantium voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quae fuga hic quod ad officia.</p>
+                <button class="btn bg-blue-900 rounded-md text-white font-bold px-3 py-2 mb-3 mt-2 text-xl hover:bg-white hover:text-blue-900 xl:text-2xl xl:mt-6"><a href="/working">Working Status</a></button>
+            </div>
+        </div>
+    </div>
+    <button class="btn bg-blue-900 text-white font-bold text-3xl px-3 py-2 pr-4 pb-3 rounded-xl text-center relative left-10 bottom-2 hover:bg-white hover:text-blue-900"><a href="/inventory">Go Back</a></button>
+    <script src="script.js"></script>
+</body>
+</html>

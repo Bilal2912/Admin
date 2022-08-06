@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.5rem',
+                        30:'7.5rem',
+                        54:'13.5rem',
+                        58:'14.5rem',
+                        62:'15.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Inventory</title>
+</head>
+<body class="bg-blue-100 m-0 p-0">
+    <div class="navbar flex justify-between items-center bg-blue-900">
+        <div class="logo p-2">
+            <a href="https://www.spit.ac.in/"><img src="College Logo.jpg" alt="" class="src w-10 xsm:w-14 md:w-16"></a>
+        </div>
+        <div class="text px-2 hover:cursor-pointer lg:hidden">
+            <h2 class="font-bold text-white text-2xl xsm:hidden xxsm:text-3xl">S.P.I.T.</h2>
+            <h2 class="font-bold text-white text-3xl hidden xsm:block sm:hidden">S.P.I.T. Andheri</h2>
+            <h2 class="font-bold text-white text-3xl hidden sm:block lg:hidden">Sardar Patel Institute of Technology</h2>
+        </div>
+        <div class="hamburger py-2 pr-4 hover:cursor-pointer lg:hidden md:pr-6">
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+            <div class="line h-1 w-8 bg-white my-1 rounded-full"></div>
+        </div>
+        <ul class="font-bold text-white hidden lg:flex">
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/welcome">Home</a></li>
+            <li class="current px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/inventory">Inventory</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/requests">Requests</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/problems">Problems</a></li>
+            <li class="px-4 py-1.5 text-3xl hover:bg-white hover:text-blue-900 rounded-lg xl:text-4xl"><a href="/students">Students</a></li>
+        </ul>
+        <div class="icon hidden lg:inline-block">
+            <img src="image(2).png" alt="" class="src w-6 absolute right-18 top-7 cursor-pointer">
+            <img src="image (1).png" alt="" class="src w-14 mr-4 cursor-pointer">
+        </div>
+    </div>
+    <div class="logout hidden" id="log">
+        <a href="/login"><span class="bg-white text-blue-900 px-4 py-2 font-bold rounded-md text-3xl absolute right-26 top-3 cursor-pointer hover:bg-blue-900 hover:text-white">Logout</span></a>
+    </div>
+    <ul class="bg-blue-900 absolute text-white font-bold rounded-md -right-1 md:right-0 top-12 xsm:top-16 hidden lg:hidden" id="navlist">
+        <li class="px-4 py-2 text-center border-b-2 hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Logout</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Home</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Inventory</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Requests</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Problems</a></li>
+        <li class="px-4 py-1 text-center hover:text-blue-900 text-md hover:bg-white sm:text-xl"><a href="">Students</a></li>
+    </ul>
+    <h2 class="font-bold text-6xl text-center mt-4">Working Status</h2>
+    <h2 class="font-bold text-lg text-center mt-2">(Hover on a box to edit status)</h2>
+    <div class="container flex justify-between m-auto w-2/3">
+        <div class="cont-1 my-6 flex">
+            <div class="title">
+                <h2 class="font-medium text-xl mt-5">Board No.</h2>
+                <h2 class="font-medium text-xl mt-6">LCD</h2>
+                <h2 class="font-medium text-xl mt-6">AD9833</h2>
+                <h2 class="font-medium text-xl mt-6">555</h2>
+                <h2 class="font-medium text-xl mt-6">Plus 15V</h2>
+                <h2 class="font-medium text-xl mt-6">Minus 15V</h2>
+                <h2 class="font-medium text-xl mt-6">Plus 5V</h2>
+            </div>
+            <div class="content">
+                <select class="hello bg-white w-64 rounded-md h-10 mt-3 ml-10 text-xl pl-2" >
+                    <option value="" disabled selected>Select Board Number</option>
+                    <option value="http://localhost:8000/board/MAV1-01">MAV1-01</option>
+                    <option value="http://localhost:8000/board/MAV1-02">MAV1-02</option>
+                    <option value="http://localhost:8000/board/MAV1-03">MAV1-03</option>
+                    <option value="http://localhost:8000/board/MAV1-04">MAV1-04</option>
+                    <option value="http://localhost:8000/board/MAV1-05">MAV1-05</option>
+                    <option value="http://localhost:8000/board/MAV1-06">MAV1-06</option>
+                    <option value="http://localhost:8000/board/MAV1-07">MAV1-07</option>
+                    <option value="http://localhost:8000/board/MAV1-08">MAV1-08</option>
+                    <option value="http://localhost:8000/board/MAV1-09">MAV1-09</option>
+                    <option value="http://localhost:8000/board/MAV1-10">MAV1-10</option>
+                </select>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="0">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="1">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="2">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="3">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="4">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="5">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-16 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+            </div>
+        </div>
+        <div class="cont-2 my-6 flex">
+            <div class="title ">
+                <h2 class="font-medium text-xl mt-5">Plus 3.3V</h2>
+                <h2 class="font-medium text-xl mt-6">Var DC (1.4-7.8)</h2>
+                <h2 class="font-medium text-xl mt-6">CC LED</h2>
+                <h2 class="font-medium text-xl mt-6">CA LED</h2>
+                <h2 class="font-medium text-xl mt-6">7 Segment-1</h2>
+                <h2 class="font-medium text-xl mt-6">7 Segment-2</h2>
+                <h2 class="font-medium text-xl mt-6">Remark</h2>
+            </div>
+            <div class="content">
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="6">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="7">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="8">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="9">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="10">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <div class="space bg-white w-64 rounded-md h-10 mt-3 ml-10" id="11">
+                    <img src="check.png" alt="" class="src hidden w-10 relative left-26">
+                    <img src="close.png" alt="" class="src hidden w-8 relative left-28 top-1">
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">Yes</button>
+                    <button class="btn text-white hidden border-2 font-medium border-white px-4 text-md w-1/4 relative left-15 top-1.5 hover:bg-white hover:text-blue-900">No</button>
+                    <h2 class="text-white hidden font-medium relative left-22 top-0.5 text-2xl">Done!!!</h2>
+                </div>
+                <p class="bg-white w-64 rounded-md h-10 mt-3 ml-10 flex flex-col justify-center items-center font-bold text-lg" id="para"></p>
+            </div>
+        </div>
+    </div>
+    <button class="btn bg-blue-900 text-white font-bold text-3xl px-3 py-2 pr-4 pb-3 rounded-xl text-center relative left-10 bottom-2 hover:bg-white hover:text-blue-900"><a href="/click">Go Back</a></button>
+    <script src="script_working.js"></script>
+</body>
+</html>

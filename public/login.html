@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.5rem',
+                        30:'7.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Login</title>
+</head>
+<body class="bg-blue-100 m-0 p-0">
+    <a href="https://www.spit.ac.in/"><img src="College Logo.jpg" alt="" class="src absolute top-2 left-2"></a>
+    <div class="con flex justify-center items-center flex-col mt-60 mr-0 text-5xl">
+        <h1 class="text-6xl absolute top-32 font-bold">Welcome to S.P.I.T. Inventory</h1>
+        <form action="/login" method="POST" class="mt-6">
+            <div class="forms flex">
+                <div class="firstcol my-2 mr-4">
+                    <div class="reg">
+                        <div class="form_elem mb-4">
+                            <label for="firstname" class="mr-7">Email ID</label>
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="email" placeholder="Your Email ID" name="emailid" required>
+                        </div>
+                        <div class="form_elem mt-4">
+                            <label for="pass" class="mr-1">Password</label>
+                            <input class="rounded-md mb-4 p-2 text-4xl" type="password" placeholder="Your Password" name="pass" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons flex">
+                <button type="submit" name="" id="" class="bg-blue-900 text-4xl rounded-md p-3 text-white  hover:bg-white hover:text-blue-900 w-1/2 font-bold mt-4 mr-2">Login</button>
+                <button type="submit" name="" id="" class="bg-blue-900 text-4xl rounded-md p-3 text-white  hover:bg-white hover:text-blue-900 w-1/2 font-bold mt-4 ml-2">Forgot Password</button>
+            </div>
+        </form>
+        <a href="./register.html" class="text-blue-700 hover:underline text-xl italic mt-1">Don't have an account? Register Here</a>
+    </div>
+    <script type="text/javascript" src="script_login.js"></script>
+</body>
+</html>
